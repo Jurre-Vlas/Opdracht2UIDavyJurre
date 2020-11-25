@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_info"
+        android:icon="@drawable/ic_baseline_perm_device_information_24"
+        android:title="Information"/>
+
+    <item
+        android:id="@+id/light"
+        android:icon="@drawable/ic_baseline_highlight_24"
+        android:title="light"/>
+
+    <item
+        android:id="@+id/colour"
+        android:icon="@drawable/ic_baseline_color_lens_24"
+        android:title="colour"/>
+
+
+</menu>
