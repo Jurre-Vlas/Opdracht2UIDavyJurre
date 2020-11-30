@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.opdracht2uidavyjurre.Colour.ColourFragment;
+import com.example.opdracht2uidavyjurre.Information.InformationFragment;
+
+import com.example.opdracht2uidavyjurre.Light.LightFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new MainFragment()).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
