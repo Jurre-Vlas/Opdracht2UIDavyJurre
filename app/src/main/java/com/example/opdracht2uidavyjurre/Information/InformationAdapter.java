@@ -1,7 +1,5 @@
 package com.example.opdracht2uidavyjurre.Information;
 
-import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.opdracht2uidavyjurre.Light.Light;
 import com.example.opdracht2uidavyjurre.R;
-
-import org.w3c.dom.Text;
 
 public class InformationAdapter extends RecyclerView.Adapter<InformationAdapter.InformationViewHolder > {
 

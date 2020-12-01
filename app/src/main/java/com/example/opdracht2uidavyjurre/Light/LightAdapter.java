@@ -7,12 +7,10 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.opdracht2uidavyjurre.Information.InformationFragment;
-import com.example.opdracht2uidavyjurre.Information.InformationInfoFragment;
 import com.example.opdracht2uidavyjurre.R;
 
 public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationViewHolder > {
