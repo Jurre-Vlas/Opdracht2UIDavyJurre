@@ -10,7 +10,7 @@
         android:id="@+id/attractionImageView"
         android:layout_width="192dp"
         android:layout_height="213dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

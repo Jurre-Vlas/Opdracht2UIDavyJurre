@@ -42,12 +42,15 @@ public class InformationInfoFragment extends Fragment {
         return view;
     }
 
-    private void setData() {
+    public void getData() {
 
+        data1 = getActivity().getIntent().getExtras().getString("data1");
+        data2 = getActivity().getIntent().getExtras().getString("data2");
+        data3 = getActivity().getIntent().getExtras().getString("data3");
     }
 
 
-    private void getData() {
+    public void setData() {
         title.setText(data1);
         description.setText(data2);
 

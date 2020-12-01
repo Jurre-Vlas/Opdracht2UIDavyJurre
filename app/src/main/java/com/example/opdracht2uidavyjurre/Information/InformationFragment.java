@@ -29,7 +29,7 @@ public class InformationFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_information, container, false);
 
       lights[0] = new Light("lamp1", "informatie over lamp 1", "nogmeer info neef");
-      lights[1] = new Light("lamp2 ", "informatie over lamp 2", "nogmeer info neef");
+      lights[1] = new Light("lamp2 ", "informatie over lamp 2", "nogmeer info neef maar dan 2");
 
       RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 
