@@ -24,7 +24,6 @@ public class InformationAdapter extends RecyclerView.Adapter<InformationAdapter.
     }
 
 
-
     @NonNull
     @Override
     public InformationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,12 +40,11 @@ public class InformationAdapter extends RecyclerView.Adapter<InformationAdapter.
         holder.informationMainLayout.setOnClickListener(v -> {
             AppCompatActivity appCompatActivity = (AppCompatActivity) v.getContext();
             InformationInfoFragment informationInfoFragment = new InformationInfoFragment();
-
+            
             appCompatActivity.getIntent().putExtra("data1", light.getName());
             appCompatActivity.getIntent().putExtra("data2", light.getDescription());
             appCompatActivity.getIntent().putExtra("data3", light.getInformation());
-
-
+            
             appCompatActivity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment, informationInfoFragment).commit();
 
         });
