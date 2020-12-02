@@ -1,6 +1,6 @@
 package com.example.opdracht2uidavyjurre.JsonParser;
 
-public class LightResponse {
+public class LightResponse implements Comparable<LightResponse>{
     private String modelid;
     private String name;
     private String swversion;
@@ -30,6 +30,10 @@ public class LightResponse {
 
     public State getState() {
         return state;
+    }
+
+    public int compareTo(LightResponse o) {
+        return name.compareTo(o.name);
     }
 
 }
