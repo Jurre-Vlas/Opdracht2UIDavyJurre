@@ -135,7 +135,9 @@ public class HueEmulatorConnector {
     public static void setColorLight(int lightNumber, int Colour) {
         //https://developers.meethue.com/develop/hue-api/lights-api/
         final String androidUrlLight = "http://10.0.2.2:8000/api/newdeveloper/lights/";
-        String jsonBody = "{\"hue\":25500}\n";
+//        String jsonBody = "{\"hue\":25500}\n";
+        String jsonBody = "{\"hue\":"+ Colour + "}\n";
+
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         RequestBody body = RequestBody.create(JSON, jsonBody);
 
@@ -147,7 +149,7 @@ public class HueEmulatorConnector {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onResponse(Response response) throws IOException {
-                System.out.println("Succes! Light turned off");
+                System.out.println("Succes! Light turned other colour");
             }
 
             @Override

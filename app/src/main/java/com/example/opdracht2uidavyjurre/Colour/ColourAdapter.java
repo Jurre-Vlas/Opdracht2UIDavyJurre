@@ -45,10 +45,15 @@ public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.Informatio
 
 
         holder.button.setOnClickListener(v -> {
-           int colourNumber = Integer.parseInt(holder.editText.getText().toString());
 
-           if (colourNumber > 0 && colourNumber < 1500 ){
-               HueEmulatorConnector.setColorLight(colourNumber, position);
+//           int colourNumber = Integer.parseInt(holder.editText.getText().toString());
+
+         String numberString = holder.editText.getText().toString();
+         int numberInt = Integer.parseInt(numberString);
+
+           if (numberInt > 0 && numberInt < 1550 ){
+//               HueEmulatorConnector.setColorLight(colourNumber, position);
+               HueEmulatorConnector.setColorLight(numberInt,position);
            }
         });
 

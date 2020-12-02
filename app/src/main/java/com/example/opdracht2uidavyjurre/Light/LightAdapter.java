@@ -3,6 +3,7 @@ package com.example.opdracht2uidavyjurre.Light;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -41,6 +42,9 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
         holder.textView1.setText(lights.get(position).getName());
         holder.textView2.setText(lights.get(position).getModelid());
 
+        //        if (lights.get(position).getState().isOn() = true){
+//        holder.checkBox.isChecked();
+//        }
 
         holder.checkBox.setOnClickListener(v -> {
             if (holder.checkBox.isChecked()) {
@@ -66,6 +70,7 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
         TextView textView2;
         CardView lightMainLayout;
         CheckBox checkBox;
+        Button refreshButton;
 
         public InformationViewHolder(@NonNull View itemView) {
             super(itemView);
