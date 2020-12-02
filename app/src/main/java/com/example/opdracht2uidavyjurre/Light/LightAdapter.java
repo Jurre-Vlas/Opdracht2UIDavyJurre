@@ -3,6 +3,7 @@ package com.example.opdracht2uidavyjurre.Light;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -52,7 +53,6 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
             }
         });
 
-
     }
 
     @Override
@@ -66,6 +66,7 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
         TextView textView2;
         CardView lightMainLayout;
         CheckBox checkBox;
+        Button refreshButton;
 
         public InformationViewHolder(@NonNull View itemView) {
             super(itemView);
