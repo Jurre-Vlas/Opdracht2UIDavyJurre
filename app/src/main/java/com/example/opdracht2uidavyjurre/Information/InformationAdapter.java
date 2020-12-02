@@ -50,9 +50,6 @@ public class InformationAdapter extends RecyclerView.Adapter<InformationAdapter.
             appCompatActivity.getIntent().putExtra("Bri", lights.get(position).getState().getBri());
             appCompatActivity.getIntent().putExtra("Hue", lights.get(position).getState().getHue());
             appCompatActivity.getIntent().putExtra("Sat", lights.get(position).getState().getSat());
-
-
-
             appCompatActivity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment, informationInfoFragment).commit();
 
         });

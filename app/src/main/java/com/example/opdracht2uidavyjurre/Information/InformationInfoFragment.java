@@ -64,9 +64,9 @@ public class InformationInfoFragment extends Fragment {
         title.setText(data1);
         description.setText(data2);
         info.setText(data3);
-        tvHue.setText(Hue);
-        tvBri.setText(Bri);
-        tvSat.setText(Sat);
+        tvHue.setText(String.valueOf(Hue));
+        tvBri.setText(String.valueOf(Bri));
+        tvSat.setText(String.valueOf(Sat));
 
     }
 }
