@@ -16,7 +16,18 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:padding="2dp"
-            android:id="@+id/imageView"/>
+            android:id="@+id/imageView"
+            app:srcCompat="@drawable/phillipslamp" />
+
+        <EditText
+            android:id="@+id/editColour"
+            android:background="#66EDE7F6"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="2dp"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_weight="0.8"
+            android:layout_toLeftOf="@id/buttonColour"/>
 
         <TextView
             android:id="@+id/textView1Colour"
@@ -35,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="3dp"
-            android:text="Button" />
+            android:text="Set Colour" />
 
 
     </RelativeLayout>

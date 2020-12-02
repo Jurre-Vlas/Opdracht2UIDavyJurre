@@ -4,25 +4,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.opdracht2uidavyjurre.Information.InformationFragment;
+import com.example.opdracht2uidavyjurre.Information.InformationInfoFragment;
+import com.example.opdracht2uidavyjurre.JsonParser.HueEmulatorConnector;
+import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
 import com.example.opdracht2uidavyjurre.R;
+
+import java.util.ArrayList;
 
 public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.InformationViewHolder > {
 
     private InformationFragment informationFragment;
-    private ColourPattern[] colourPatterns;
+    private ArrayList<LightResponse> lights;
 
-
-    public ColourAdapter(ColourPattern[] colourPatterns){
-        this.colourPatterns = colourPatterns;
+    public ColourAdapter(ArrayList<LightResponse> lights) {
+        this.lights = lights;
     }
-
 
 
     @NonNull
@@ -34,20 +39,24 @@ public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.Informatio
 
     @Override
     public void onBindViewHolder(@NonNull InformationViewHolder holder, int position) {
-      ColourPattern colourPattern = colourPatterns[position];
+        holder.textView1.setText(lights.get(position).getName());
 
-        holder.textView1.setText(colourPattern.getName());
+//        holder.textView1.setText(lights.get(position).getName());
 
-        holder.colourLayout.setOnClickListener(v -> {
 
-//            colourPattern[position];
+        holder.button.setOnClickListener(v -> {
+           int colourNumber = Integer.parseInt(holder.editText.getText().toString());
 
+           if (colourNumber > 0 && colourNumber < 1500 ){
+               HueEmulatorConnector.setColorLight(colourNumber, position);
+           }
         });
+
     }
 
     @Override
     public int getItemCount() {
-        return colourPatterns.length;
+        return lights.size();
     }
 
     public class InformationViewHolder extends RecyclerView.ViewHolder {
@@ -55,6 +64,7 @@ public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.Informatio
         TextView textView1;
         Button button;
         CardView colourLayout;
+        EditText editText;
 
 
 
@@ -65,6 +75,8 @@ public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.Informatio
             button = itemView.findViewById(R.id.buttonColour);
 
             colourLayout = itemView.findViewById(R.id.colourLayout);
+
+            editText = itemView.findViewById(R.id.editColour);
 
         }
     }
