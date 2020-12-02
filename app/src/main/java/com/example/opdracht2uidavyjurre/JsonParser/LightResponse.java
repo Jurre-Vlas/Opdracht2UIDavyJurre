@@ -8,8 +8,17 @@ public class LightResponse implements Comparable<LightResponse>{
     private String uniqueid;
     private State state;
 
+    public LightResponse(String modelid, String name, String swversion, String type, String uniqueid) {
+        this.modelid = modelid;
+        this.name = name;
+        this.swversion = swversion;
+        this.type = type;
+        this.uniqueid = uniqueid;
+    }
+
     public String getModelid() {
         return modelid;
+
     }
 
     public String getName() {

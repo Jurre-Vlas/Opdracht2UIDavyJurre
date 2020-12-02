@@ -2,55 +2,94 @@ package com.example.opdracht2uidavyjurre.JsonParser;
 
 import java.util.List;
 
-public class State{
-	private List<Double> xy;
-	private int ct;
-	private String alert;
-	private int sat;
-	private String effect;
-	private int bri;
-	private int hue;
-	private String colormode;
-	private boolean reachable;
-	private boolean on;
+import com.google.gson.annotations.SerializedName;
 
-	public List<Double> getXy(){
-		return xy;
-	}
+public class State {
 
-	public int getCt(){
-		return ct;
-	}
+    public State() {
 
-	public String getAlert(){
-		return alert;
-	}
+    }
 
-	public int getSat(){
-		return sat;
-	}
+    public State(List<Double> xy, int ct, String alert, int sat, String effect, int bri, int hue, String colormode, boolean reachable, boolean on) {
+        this.xy = xy;
+        this.ct = ct;
+        this.alert = alert;
+        this.sat = sat;
+        this.effect = effect;
+        this.bri = bri;
+        this.hue = hue;
+        this.colormode = colormode;
+        this.reachable = reachable;
+        this.on = on;
+    }
 
-	public String getEffect(){
-		return effect;
-	}
+    @SerializedName("xy")
+    private List<Double> xy;
 
-	public int getBri(){
-		return bri;
-	}
+    @SerializedName("ct")
+    private int ct;
 
-	public int getHue(){
-		return hue;
-	}
+    @SerializedName("alert")
+    private String alert;
 
-	public String getColormode(){
-		return colormode;
-	}
+    @SerializedName("sat")
+    private int sat;
 
-	public boolean isReachable(){
-		return reachable;
-	}
+    @SerializedName("effect")
+    private String effect;
 
-	public boolean isOn(){
-		return on;
-	}
+    @SerializedName("bri")
+    private int bri;
+
+    @SerializedName("hue")
+    private int hue;
+
+    @SerializedName("colormode")
+    private String colormode;
+
+    @SerializedName("reachable")
+    private boolean reachable;
+
+    @SerializedName("on")
+    private boolean on;
+
+    public List<Double> getXy() {
+        return xy;
+    }
+
+    public int getCt() {
+        return ct;
+    }
+
+    public String getAlert() {
+        return alert;
+    }
+
+    public int getSat() {
+        return sat;
+    }
+
+    public String getEffect() {
+        return effect;
+    }
+
+    public int getBri() {
+        return bri;
+    }
+
+    public int getHue() {
+        return hue;
+    }
+
+    public String getColormode() {
+        return colormode;
+    }
+
+    public boolean isReachable() {
+        return reachable;
+    }
+
+    public boolean isOn() {
+        return on;
+    }
 }

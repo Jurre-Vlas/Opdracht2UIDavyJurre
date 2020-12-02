@@ -42,7 +42,10 @@ public class HueEmulatorConnector {
                     if (!jsonReturned.contains("error")) {
                         System.out.println("Adding the file now!!");
                         LightResponse jsonResponse = new Gson().fromJson(jsonReturned, LightResponse.class);
+
                         arrayLights.add(jsonResponse);
+
+
                         System.out.println("Added an item! The size of the array is now: " + arrayLights.size());
                     }
 
@@ -154,8 +157,6 @@ public class HueEmulatorConnector {
             }
         });
     }
-
-
 
 
 }
