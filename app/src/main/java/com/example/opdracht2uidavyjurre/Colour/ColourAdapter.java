@@ -7,13 +7,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.opdracht2uidavyjurre.Information.InformationFragment;
-import com.example.opdracht2uidavyjurre.Information.InformationInfoFragment;
-import com.example.opdracht2uidavyjurre.Light.Light;
 import com.example.opdracht2uidavyjurre.R;
 
 public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.InformationViewHolder > {
@@ -39,13 +36,13 @@ public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.Informatio
     public void onBindViewHolder(@NonNull InformationViewHolder holder, int position) {
       ColourPattern colourPattern = colourPatterns[position];
 
-//        holder.textView1.setText(colourPattern.getName());
-//        holder.button.setOnClickListener(v -> {
-//
-//
-//
-//
-//        });
+        holder.textView1.setText(colourPattern.getName());
+
+        holder.colourLayout.setOnClickListener(v -> {
+
+//            colourPattern[position];
+
+        });
     }
 
     @Override
@@ -57,12 +54,17 @@ public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.Informatio
 
         TextView textView1;
         Button button;
+        CardView colourLayout;
+
+
 
         public InformationViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textView1 = itemView.findViewById(R.id.textView1Colour);
             button = itemView.findViewById(R.id.buttonColour);
+
+            colourLayout = itemView.findViewById(R.id.colourLayout);
 
         }
     }

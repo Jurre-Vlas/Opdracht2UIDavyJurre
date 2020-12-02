@@ -12,25 +12,30 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.opdracht2uidavyjurre.Information.InformationAdapter;
+import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
 import com.example.opdracht2uidavyjurre.R;
+
+import java.util.ArrayList;
 
 public class LightFragment extends Fragment {
 
-    private Light[] lights;
+    ArrayList<LightResponse> hueEmulator;
+
+    public LightFragment(ArrayList<LightResponse> hueEmulator) {
+        this.hueEmulator = hueEmulator;
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        lights = new Light[2];
+//        lights = new LightResponse[];
 
         View view =  inflater.inflate(R.layout.fragment_light, container, false);
 
-        lights[0] = new Light("lamp1", "informatie over lamp 1", "nogmeer info neef");
-        lights[1] = new Light("lamp2 ", "informatie over lamp 2", "nogmeer info neef maar dan 2");
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewLight);
 
-        LightAdapter lightAdapter = new LightAdapter(lights);
+        LightAdapter lightAdapter = new LightAdapter(hueEmulator);
 
         recyclerView.setAdapter(lightAdapter);
 

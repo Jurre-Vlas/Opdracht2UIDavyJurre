@@ -57,7 +57,6 @@ public class HueEmulatorConnector {
                     System.out.println(e.getMessage());
                     System.out.println("****************************************************************************************");
 
-
                 }
             });
         }
@@ -116,7 +115,7 @@ public class HueEmulatorConnector {
         });
     }
 
-    public static void setColorLight(int lightNumber) {
+    public static void setColorLight(int lightNumber, int Colour) {
         //https://developers.meethue.com/develop/hue-api/lights-api/
         final String androidUrlLight = "http://10.0.2.2:8000/api/newdeveloper/lights/";
         String jsonBody = "{\"hue\":25500}\n";

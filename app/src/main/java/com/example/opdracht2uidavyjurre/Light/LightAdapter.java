@@ -7,23 +7,26 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.opdracht2uidavyjurre.Information.InformationFragment;
+import com.example.opdracht2uidavyjurre.Information.InformationInfoFragment;
+import com.example.opdracht2uidavyjurre.JsonParser.HueEmulatorConnector;
+import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
 import com.example.opdracht2uidavyjurre.R;
+
+import java.util.ArrayList;
 
 public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationViewHolder > {
 
-    private InformationFragment informationFragment;
-    private Light[] lights;
+    ArrayList<LightResponse> lights;
 
+    public LightAdapter(ArrayList<LightResponse> hueEmulator) {
+        lights = hueEmulator;
 
-    public LightAdapter(Light[] lights){
-        this.lights = lights;
     }
-
-
 
     @NonNull
     @Override
@@ -34,20 +37,23 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
 
     @Override
     public void onBindViewHolder(@NonNull InformationViewHolder holder, int position) {
-        Light light = this.lights[position];
 
-        holder.textView1.setText(light.getName());
-        holder.textView2.setText(light.getInformation());
+        holder.textView1.setText(lights.get(position).getName());
+        holder.textView2.setText(lights.get(position).getModelid());
 
-        holder.checkBox.setOnClickListener(v -> {
+//        HueEmulatorConnector.turnOffLight(position);
+//
+//
+//        holder.checkBox.setOnClickListener(v -> {
+//            HueEmulatorConnector.turnOnLight(position);
+//        });
+//
 
-
-        });
     }
 
     @Override
     public int getItemCount() {
-        return lights.length;
+        return lights.size();
     }
 
     public class InformationViewHolder extends RecyclerView.ViewHolder {

@@ -10,11 +10,16 @@ import android.view.MenuItem;
 import com.example.opdracht2uidavyjurre.Colour.ColourFragment;
 import com.example.opdracht2uidavyjurre.Information.InformationFragment;
 
+import com.example.opdracht2uidavyjurre.JsonParser.HueEmulatorConnector;
+import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
 import com.example.opdracht2uidavyjurre.Light.LightFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
+    ArrayList<LightResponse> hueEmulator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
+        hueEmulator = HueEmulatorConnector.retrieveLights();
+//
+//        for (int i = 0; i < hueEmulator.size(); i++) {
+//            HueEmulatorConnector.turnOnLight(i);
+//
+//            System.out.println(hueEmulator.get(i).getName() + "is on");
+//
+//        }
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new MainFragment()).commit();
     }
@@ -35,15 +48,15 @@ public class MainActivity extends AppCompatActivity {
 
                     switch (item.getItemId()){
                         case R.id.nav_info:
-                            selectedFragment  = new InformationFragment();
+                            selectedFragment  = new InformationFragment(hueEmulator);
                             break;
 
                         case R.id.nav_light:
-                            selectedFragment  = new LightFragment();
+                            selectedFragment  = new LightFragment(hueEmulator);
                             break;
 
                         case R.id.nav_colour:
-                            selectedFragment  = new ColourFragment();
+                            selectedFragment  = new ColourFragment(hueEmulator);
                             break;
                     }
 

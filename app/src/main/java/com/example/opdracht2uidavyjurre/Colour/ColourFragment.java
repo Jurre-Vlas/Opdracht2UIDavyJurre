@@ -11,13 +11,18 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.opdracht2uidavyjurre.Information.InformationAdapter;
-import com.example.opdracht2uidavyjurre.Light.Light;
+import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
 import com.example.opdracht2uidavyjurre.R;
+
+import java.util.ArrayList;
 
 public class ColourFragment extends Fragment {
 
     private ColourPattern[] colourPattern;
+
+    public ColourFragment(ArrayList<LightResponse> hueEmulator) {
+
+    }
 
     @Nullable
     @Override
@@ -28,8 +33,6 @@ public class ColourFragment extends Fragment {
 
         View view =  inflater.inflate(R.layout.fragment_colour, container, false);
 
-//        colourPattern[0] = new ColourPattern("", "informatie over lamp 1", "nogmeer info neef");
-//        lights[1] = new Light("lamp2 ", "informatie over lamp 2", "nogmeer info neef maar dan 2");2
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewColour);
 
@@ -43,8 +46,5 @@ public class ColourFragment extends Fragment {
 
         return view;
 
-
-
-        //return inflater.inflate(R.layout.fragment_colour, container, false);
     }
 }
