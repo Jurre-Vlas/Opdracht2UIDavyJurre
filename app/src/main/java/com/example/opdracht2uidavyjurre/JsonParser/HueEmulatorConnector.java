@@ -52,17 +52,8 @@ public class HueEmulatorConnector {
                     System.out.println("****************************************************************************************");
 
 
-                    for (int i = 0; i < arrayLights.size(); i++) {
-                        System.out.println("Before sorting");
-                        System.out.println(arrayLights.get(i).getName());
-                    }
-
                     Collections.sort(arrayLights);
 
-                    for (int i = 0; i < arrayLights.size(); i++) {
-                        System.out.println("after sorting");
-                        System.out.println(arrayLights.get(i).getName());
-                    }
                 }
 
                 @Override
@@ -135,25 +126,29 @@ public class HueEmulatorConnector {
     public static void setColorLight(int lightNumber, int Colour) {
         //https://developers.meethue.com/develop/hue-api/lights-api/
         final String androidUrlLight = "http://10.0.2.2:8000/api/newdeveloper/lights/";
-//        String jsonBody = "{\"hue\":25500}\n";
-        String jsonBody = "{\"hue\":"+ Colour + "}\n";
+
+        String jsonBody = "{\"hue\":" + Colour + "}\n";
 
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         RequestBody body = RequestBody.create(JSON, jsonBody);
 
+        int newNumber = lightNumber + 1;
+
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(androidUrlLight + lightNumber + "/state")
+                .url(androidUrlLight + newNumber  + "/state/")
                 .put(body)
                 .build();
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onResponse(Response response) throws IOException {
+                System.out.println(response.body().string());
                 System.out.println("Succes! Light turned other colour");
             }
 
             @Override
             public void onFailure(Request request, IOException e) {
+                System.out.println(e.getLocalizedMessage());
                 System.out.println("Fail!");
 
             }
