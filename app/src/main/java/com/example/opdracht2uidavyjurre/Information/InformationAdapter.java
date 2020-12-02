@@ -42,6 +42,7 @@ public class InformationAdapter extends RecyclerView.Adapter<InformationAdapter.
         holder.textView1.setText(lights.get(position).getName());
         holder.textView2.setText(lights.get(position).getModelid());
 
+
         holder.informationMainLayout.setOnClickListener(v -> {
             AppCompatActivity appCompatActivity = (AppCompatActivity) v.getContext();
             InformationInfoFragment informationInfoFragment = new InformationInfoFragment();
