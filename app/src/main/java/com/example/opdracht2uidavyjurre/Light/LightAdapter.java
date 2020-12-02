@@ -42,6 +42,9 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
         holder.textView1.setText(lights.get(position).getName());
         holder.textView2.setText(lights.get(position).getModelid());
 
+        //        if (lights.get(position).getState().isOn() = true){
+//        holder.checkBox.isChecked();
+//        }
 
         holder.checkBox.setOnClickListener(v -> {
             if (holder.checkBox.isChecked()) {
@@ -52,6 +55,7 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
                 HueEmulatorConnector.turnOffLight(position + 1);
             }
         });
+
 
     }
 

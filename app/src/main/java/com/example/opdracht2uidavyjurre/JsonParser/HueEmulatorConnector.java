@@ -146,7 +146,7 @@ public class HueEmulatorConnector {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onResponse(Response response) throws IOException {
-                System.out.println("Succes! Light turned off");
+                System.out.println("Succes! Light turned other colour");
             }
 
             @Override

@@ -4,6 +4,7 @@ import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.opdracht2uidavyjurre.JsonParser.HueEmulatorConnector;
 import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
+import com.example.opdracht2uidavyjurre.MainFragment;
 import com.example.opdracht2uidavyjurre.R;
 
 import java.util.ArrayList;
@@ -53,6 +55,9 @@ public class InformationAdapter extends RecyclerView.Adapter<InformationAdapter.
             appCompatActivity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment, informationInfoFragment).commit();
 
         });
+
+
+
     }
 
     @Override
@@ -65,6 +70,7 @@ public class InformationAdapter extends RecyclerView.Adapter<InformationAdapter.
         TextView textView1;
         TextView textView2;
         CardView informationMainLayout;
+        Button refreshButton;
 
         public InformationViewHolder(@NonNull View itemView) {
             super(itemView);
