@@ -10,6 +10,7 @@ import com.squareup.okhttp.Response;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class HueEmulatorConnector {
 
@@ -43,12 +44,22 @@ public class HueEmulatorConnector {
                         LightResponse jsonResponse = new Gson().fromJson(jsonReturned, LightResponse.class);
                         arrayLights.add(jsonResponse);
                         System.out.println("Added an item! The size of the array is now: " + arrayLights.size());
-                        System.out.println(jsonResponse.getState().getBri());
-                        System.out.println(jsonResponse.getState().getHue());
-
                     }
 
                     System.out.println("****************************************************************************************");
+
+
+                    for (int i = 0; i < arrayLights.size(); i++) {
+                        System.out.println("Before sorting");
+                        System.out.println(arrayLights.get(i).getName());
+                    }
+
+                    Collections.sort(arrayLights);
+
+                    for (int i = 0; i < arrayLights.size(); i++) {
+                        System.out.println("after sorting");
+                        System.out.println(arrayLights.get(i).getName());
+                    }
                 }
 
                 @Override
@@ -59,7 +70,6 @@ public class HueEmulatorConnector {
                     System.out.println(e.getLocalizedMessage());
                     System.out.println(e.getMessage());
                     System.out.println("****************************************************************************************");
-
                 }
             });
         }
@@ -67,6 +77,7 @@ public class HueEmulatorConnector {
 
         return arrayLights;
     }
+
 
     public static void turnOffLight(int lightNumber) {
         final String androidUrlLight = "http://10.0.2.2:8000/api/newdeveloper/lights/";
