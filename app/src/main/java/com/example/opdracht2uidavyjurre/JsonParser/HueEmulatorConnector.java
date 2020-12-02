@@ -43,6 +43,9 @@ public class HueEmulatorConnector {
                         LightResponse jsonResponse = new Gson().fromJson(jsonReturned, LightResponse.class);
                         arrayLights.add(jsonResponse);
                         System.out.println("Added an item! The size of the array is now: " + arrayLights.size());
+                        System.out.println(jsonResponse.getState().getBri());
+                        System.out.println(jsonResponse.getState().getHue());
+
                     }
 
                     System.out.println("****************************************************************************************");

@@ -6,6 +6,7 @@ public class LightResponse {
     private String swversion;
     private String type;
     private String uniqueid;
+    private State state;
 
     public String getModelid() {
         return modelid;
@@ -19,13 +20,16 @@ public class LightResponse {
         return swversion;
     }
 
-
     public String getType() {
         return type;
     }
 
-
     public String getUniqueid() {
         return uniqueid;
     }
+
+    public State getState() {
+        return state;
+    }
+
 }
