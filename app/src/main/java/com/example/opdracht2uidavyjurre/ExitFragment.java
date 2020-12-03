@@ -19,12 +19,16 @@ public class ExitFragment extends Fragment {
 
     ArrayList<LightResponse> lights;
 
-    public ExitFragment(ArrayList<LightResponse> hueEmulator) {
-         lights = hueEmulator;
-    }
+
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         View view = inflater.inflate(R.layout.activity_fragment_exit, container, false);
+        try {
+            lights= HueEmulatorConnector.retrieveLights();
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        View view = inflater.inflate(R.layout.activity_fragment_exit, container, false);
 
          Button exitButton = (Button) view.findViewById(R.id.exitButton);
 
