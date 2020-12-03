@@ -35,6 +35,7 @@ public class LightFragment extends Fragment {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         View view =  inflater.inflate(R.layout.fragment_light, container, false);
 
 
