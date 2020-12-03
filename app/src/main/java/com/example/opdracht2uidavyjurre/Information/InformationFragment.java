@@ -39,7 +39,6 @@ public class InformationFragment extends Fragment {
         }
         View view =  inflater.inflate(R.layout.fragment_information, container, false);
 
-        Button refreshbutton = view.findViewById(R.id.refreshButtonInformation);
 
       RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 

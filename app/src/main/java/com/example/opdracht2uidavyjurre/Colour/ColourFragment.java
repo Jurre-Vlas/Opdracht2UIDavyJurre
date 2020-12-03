@@ -33,19 +33,19 @@ public class ColourFragment extends Fragment {
 
 
 
-        View view =  inflater.inflate(R.layout.fragment_colour, container, false);
-
-
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewColour);
-
-        ColourAdapter colourAdapter = new ColourAdapter(hueEmulator);
-
-        recyclerView.setAdapter(colourAdapter);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-
-        recyclerView.setLayoutManager(layoutManager);
-
+        View view =  inflater.inflate(R.layout.fragment__setinformation_light, container, false);
+//
+//
+//        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewColour);
+//
+//        ColourAdapter colourAdapter = new ColourAdapter(hueEmulator);
+//
+//        recyclerView.setAdapter(colourAdapter);
+//
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+//
+//        recyclerView.setLayoutManager(layoutManager);
+//
         return view;
 
     }
