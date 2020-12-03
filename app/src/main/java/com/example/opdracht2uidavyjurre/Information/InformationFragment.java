@@ -24,15 +24,19 @@ public class InformationFragment extends Fragment {
 
     ArrayList<LightResponse> hueEmulator;
 
-    public InformationFragment(ArrayList<LightResponse> hueEmulator) {
 
-        this.hueEmulator = hueEmulator;
-    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        hueEmulator = HueEmulatorConnector.retrieveLights();
+
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         View view = inflater.inflate(R.layout.fragment_information, container, false);
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);

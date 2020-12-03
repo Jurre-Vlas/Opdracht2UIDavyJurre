@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.opdracht2uidavyjurre.Information.InformationAdapter;
+import com.example.opdracht2uidavyjurre.JsonParser.HueEmulatorConnector;
 import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
 import com.example.opdracht2uidavyjurre.R;
 
@@ -21,14 +22,18 @@ public class LightFragment extends Fragment {
 
     ArrayList<LightResponse> hueEmulator;
 
-    public LightFragment(ArrayList<LightResponse> hueEmulator) {
-        this.hueEmulator = hueEmulator;
-    }
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        hueEmulator = HueEmulatorConnector.retrieveLights();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         View view = inflater.inflate(R.layout.fragment_light, container, false);
 
 
