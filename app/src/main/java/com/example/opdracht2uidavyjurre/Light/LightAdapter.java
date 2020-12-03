@@ -51,8 +51,6 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
                 HueEmulatorConnector.turnOffLight(position + 1);
             }
         });
-
-
     }
 
     @Override

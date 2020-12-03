@@ -41,12 +41,8 @@ public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.Informatio
     public void onBindViewHolder(@NonNull InformationViewHolder holder, int position) {
         holder.textView1.setText(lights.get(position).getName());
 
-//        holder.textView1.setText(lights.get(position).getName());
-
-
         holder.button.setOnClickListener(v -> {
 
-//           int colourNumber = Integer.parseInt(holder.editText.getText().toString());
 
          String numberString = holder.editText.getText().toString();
          int numberInt = Integer.parseInt(numberString);
