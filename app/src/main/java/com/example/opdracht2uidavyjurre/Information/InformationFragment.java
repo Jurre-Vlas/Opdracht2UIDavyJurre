@@ -33,25 +33,20 @@ public class InformationFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view =  inflater.inflate(R.layout.fragment_information, container, false);
+        View view = inflater.inflate(R.layout.fragment_information, container, false);
 
-        Button refreshbutton = view.findViewById(R.id.refreshButtonInformation);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 
+        InformationAdapter informationAdapter = new InformationAdapter(hueEmulator);
 
-      RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        recyclerView.setAdapter(informationAdapter);
 
-      InformationAdapter informationAdapter = new InformationAdapter(hueEmulator);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
-      recyclerView.setAdapter(informationAdapter);
+        recyclerView.setLayoutManager(layoutManager);
 
-      RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-
-      recyclerView.setLayoutManager(layoutManager);
-
-      return view;
+        return view;
     }
-
-
 
 
 }

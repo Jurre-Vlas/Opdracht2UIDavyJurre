@@ -30,7 +30,7 @@ public class LightFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 //        lights = new LightResponse[];
 
-        View view =  inflater.inflate(R.layout.fragment_light, container, false);
+        View view = inflater.inflate(R.layout.fragment_light, container, false);
 
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewLight);

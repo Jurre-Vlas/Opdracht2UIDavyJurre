@@ -26,7 +26,6 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
 
     public LightAdapter(ArrayList<LightResponse> hueEmulator) {
         lights = hueEmulator;
-
     }
 
     @NonNull
@@ -38,12 +37,11 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
 
     @Override
     public void onBindViewHolder(@NonNull InformationViewHolder holder, int position) {
-
+        holder.checkBox.setId(position);
         holder.textView1.setText(lights.get(position).getName());
         holder.textView2.setText(lights.get(position).getModelid());
-
         holder.checkBox.setChecked(lights.get(position).getState().isOn());
-        
+
         holder.checkBox.setOnClickListener(v -> {
             if (holder.checkBox.isChecked()) {
                 HueEmulatorConnector.turnOnLight(position + 1);
@@ -68,7 +66,6 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
         TextView textView2;
         CardView lightMainLayout;
         CheckBox checkBox;
-        Button refreshButton;
 
         public InformationViewHolder(@NonNull View itemView) {
             super(itemView);
