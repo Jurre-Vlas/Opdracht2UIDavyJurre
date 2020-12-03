@@ -51,6 +51,18 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
                 HueEmulatorConnector.turnOffLight(position + 1);
             }
         });
+
+        holder.lightMainLayout.setOnClickListener(v -> {
+
+            AppCompatActivity appCompatActivity = (AppCompatActivity) v.getContext();
+            LightInfoFragment informationInfoFragment = new LightInfoFragment(lights, position);
+
+            System.out.println("position " + position);
+
+            appCompatActivity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment, informationInfoFragment).commit();
+
+        });
+
     }
 
     @Override
@@ -64,7 +76,6 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
         TextView textView2;
         CardView lightMainLayout;
         CheckBox checkBox;
-        Button refreshButton;
 
         public InformationViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,8 +83,9 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
             textView1 = itemView.findViewById(R.id.textView1);
             textView2 = itemView.findViewById(R.id.textView2);
 
-            lightMainLayout = itemView.findViewById(R.id.informationLayout);
+            lightMainLayout = itemView.findViewById(R.id.lightsetLayout);
             checkBox = itemView.findViewById(R.id.checkBox);
+
 
         }
     }

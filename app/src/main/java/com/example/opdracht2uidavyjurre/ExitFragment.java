@@ -2,7 +2,6 @@ package com.example.opdracht2uidavyjurre;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
@@ -16,11 +15,27 @@ import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
 
 import java.util.ArrayList;
 
-public class MainFragment extends Fragment {
+public class ExitFragment extends Fragment {
 
+    ArrayList<LightResponse> lights;
+
+    public ExitFragment(ArrayList<LightResponse> hueEmulator) {
+         lights = hueEmulator;
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+         View view = inflater.inflate(R.layout.activity_fragment_exit, container, false);
 
-        return inflater.inflate(R.layout.activity_fragment_main, container, false);
+         Button exitButton = (Button) view.findViewById(R.id.exitButton);
+
+         exitButton.setOnClickListener(v -> {
+
+             for (int i = 0; i < lights.size() ; i++) {
+                 HueEmulatorConnector.turnOffLight(i+ 1);
+                 System.exit(0);
+             }
+        });
+
+         return view;
     }
 }

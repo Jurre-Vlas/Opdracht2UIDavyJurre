@@ -37,6 +37,8 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation "androidx.cardview:cardview:1.0.0"
 
+    implementation 'com.github.yukuku:ambilwarna:2.0.1'
+
 
     androidTestImplementation ('com.android.support.test:rules:1.0.2'){
         exclude module: 'support-annotations'

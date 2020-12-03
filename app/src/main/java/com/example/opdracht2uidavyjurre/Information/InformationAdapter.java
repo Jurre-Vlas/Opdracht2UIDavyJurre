@@ -1,11 +1,9 @@
 package com.example.opdracht2uidavyjurre.Information;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,9 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.opdracht2uidavyjurre.JsonParser.HueEmulatorConnector;
 import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
-import com.example.opdracht2uidavyjurre.MainFragment;
 import com.example.opdracht2uidavyjurre.R;
 
 import java.util.ArrayList;

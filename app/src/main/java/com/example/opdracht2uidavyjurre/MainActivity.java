@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         hueEmulator = HueEmulatorConnector.retrieveLights();
+
+
 //
 //        for (int i = 0; i < hueEmulator.size(); i++) {
 //            HueEmulatorConnector.turnOnLight(i);
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        }
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new MainFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new InformationFragment(hueEmulator)).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_colour:
-                            selectedFragment  = new ColourFragment(hueEmulator);
+                            selectedFragment  = new ExitFragment(hueEmulator);
                             break;
                     }
 
