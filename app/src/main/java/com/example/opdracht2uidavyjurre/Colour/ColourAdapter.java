@@ -33,7 +33,7 @@ public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.Informatio
     @NonNull
     @Override
     public InformationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.colour_boxview, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.information_boxview, parent, false);
         return new InformationViewHolder(view);
     }
 
@@ -72,12 +72,12 @@ public class ColourAdapter extends RecyclerView.Adapter<ColourAdapter.Informatio
         public InformationViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textView1 = itemView.findViewById(R.id.textView1Colour);
-            button = itemView.findViewById(R.id.buttonColour);
-
-            colourLayout = itemView.findViewById(R.id.colourLayout);
-
-            editText = itemView.findViewById(R.id.editColour);
+//            textView1 = itemView.findViewById(R.id.textView1Colour);
+//            button = itemView.findViewById(R.id.buttonColour);
+//
+//            colourLayout = itemView.findViewById(R.id.colourLayout);
+//
+//            editText = itemView.findViewById(R.id.editColour);
 
         }
     }

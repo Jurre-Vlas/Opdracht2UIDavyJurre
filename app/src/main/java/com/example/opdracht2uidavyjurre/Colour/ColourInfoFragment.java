@@ -16,7 +16,7 @@ public class ColourInfoFragment extends Fragment {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment__colour_info, container, false);
+        View view =  inflater.inflate(R.layout.fragment__setinformation_light, container, false);
 
        
 
