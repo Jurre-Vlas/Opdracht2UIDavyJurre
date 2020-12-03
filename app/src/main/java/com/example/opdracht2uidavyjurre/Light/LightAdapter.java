@@ -40,21 +40,22 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
     public void onBindViewHolder(@NonNull InformationViewHolder holder, int position) {
 
         holder.textView1.setText(lights.get(position).getName());
-//        holder.textView2.setText(lights.get(position).getModelid());
+        holder.checkBox.setVisibility(View.VISIBLE);
+        holder.textView2.setText(lights.get(position).getModelid());
 
 
-        //holder.checkBox.setChecked(lights.get(position).getState().isOn());
+        holder.checkBox.setChecked(lights.get(position).getState().isOn());
 
 
-//        holder.checkBox.setOnClickListener(v -> {
-//            if (holder.checkBox.isChecked()) {
-//                HueEmulatorConnector.turnOnLight(position + 1);
-//            }
-//
-//            if (!holder.checkBox.isChecked()) {
-//                HueEmulatorConnector.turnOffLight(position + 1);
-//            }
-//        });
+        holder.checkBox.setOnClickListener(v -> {
+            if (holder.checkBox.isChecked()) {
+                HueEmulatorConnector.turnOnLight(position + 1);
+            }
+
+            if (!holder.checkBox.isChecked()) {
+                HueEmulatorConnector.turnOffLight(position + 1);
+            }
+        });
 
         holder.lightMainLayout.setOnClickListener(v -> {
 
@@ -88,7 +89,7 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
             textView2 = itemView.findViewById(R.id.textView2);
 
             lightMainLayout = itemView.findViewById(R.id.informationLayout);
-           // checkBox = itemView.findViewById(R.id.checkBox);
+            checkBox = itemView.findViewById(R.id.checkBoxOn);
 
 
         }
