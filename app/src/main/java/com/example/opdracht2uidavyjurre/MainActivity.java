@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        }
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new InformationFragment(hueEmulator)).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new InformationFragment()).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -50,15 +50,15 @@ public class MainActivity extends AppCompatActivity {
 
                     switch (item.getItemId()){
                         case R.id.nav_info:
-                            selectedFragment  = new InformationFragment(hueEmulator);
+                            selectedFragment  = new InformationFragment();
                             break;
 
                         case R.id.nav_light:
-                            selectedFragment  = new LightFragment(hueEmulator);
+                            selectedFragment  = new LightFragment();
                             break;
 
                         case R.id.nav_colour:
-                            selectedFragment  = new ExitFragment(hueEmulator);
+                            selectedFragment  = new ExitFragment();
                             break;
                     }
 
