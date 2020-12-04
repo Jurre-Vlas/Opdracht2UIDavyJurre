@@ -31,13 +31,6 @@ public class MainActivity extends AppCompatActivity {
         hueEmulator = HueEmulatorConnector.retrieveLights();
 
 
-//
-//        for (int i = 0; i < hueEmulator.size(); i++) {
-//            HueEmulatorConnector.turnOnLight(i);
-//
-//            System.out.println(hueEmulator.get(i).getName() + "is on");
-//
-//        }
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new InformationFragment()).commit();
     }
