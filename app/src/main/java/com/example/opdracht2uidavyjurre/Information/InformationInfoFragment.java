@@ -64,9 +64,16 @@ public class InformationInfoFragment extends Fragment {
         title.setText(data1);
         description.setText(data2);
         info.setText(data3);
-        tvHue.setText(String.valueOf(Hue));
-        tvBri.setText(String.valueOf(Bri));
-        tvSat.setText(String.valueOf(Sat));
+        tvHue.setText("Collor: " +  String.valueOf(Hue));
+        tvBri.setText("Brightness: " + String.valueOf(Bri));
+        tvSat.setText( "Saturation: " +  String.valueOf(Sat));
+
+        //            appCompatActivity.getIntent().putExtra("data1", lights.get(position).getName());
+        //            appCompatActivity.getIntent().putExtra("data2", lights.get(position).getModelid());
+        //            appCompatActivity.getIntent().putExtra("data3", "type: " + lights.get(position).getType());
+        //            appCompatActivity.getIntent().putExtra("Bri", "Brightness: " + lights.get(position).getState().getBri());
+        //            appCompatActivity.getIntent().putExtra("Hue", "Collor: " +  lights.get(position).getState().getHue());
+        //            appCompatActivity.getIntent().putExtra("Sat", "Saturation: " +  lights.get(position).getState().getSat());
 
     }
 }
