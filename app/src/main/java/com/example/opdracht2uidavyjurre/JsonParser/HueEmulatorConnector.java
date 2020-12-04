@@ -179,7 +179,7 @@ public class HueEmulatorConnector {
             @Override
             public void onResponse(Response response) throws IOException {
                 System.out.println(response.body().string());
-                System.out.println("Succes! Light turned other colour");
+                System.out.println("Succes! Light saturation changed");
             }
 
             @Override
@@ -212,7 +212,7 @@ public static void setBrightness(int lightNumber, int Colour) {
         @Override
         public void onResponse(Response response) throws IOException {
             System.out.println(response.body().string());
-            System.out.println("Succes! Light turned other colour");
+            System.out.println("Succes! Brightness changed");
         }
 
         @Override

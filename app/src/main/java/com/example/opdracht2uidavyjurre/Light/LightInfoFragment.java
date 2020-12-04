@@ -1,6 +1,7 @@
 package com.example.opdracht2uidavyjurre.Light;
 
 import android.graphics.Paint;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,12 +45,50 @@ public class LightInfoFragment extends Fragment {
         seekbarbrightness = (SeekBar) view.findViewById(R.id.SeekbarBri) ;
         seekbarSat = (SeekBar)view.findViewById(R.id.SeekbarSat);
 
-        seekbarcolor.setMax(1559);
+        seekbarcolor.setMax(65535);
+
+        seekbarbrightness.setMax(254);
+
+        seekbarSat.setMax(254);
 
         seekbarcolor.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 HueEmulatorConnector.setColorLight(position, progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        seekbarbrightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                HueEmulatorConnector.setBrightness(position, progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        seekbarSat.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                HueEmulatorConnector.setSaturation(position, progress);
             }
 
             @Override
