@@ -26,13 +26,14 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class TestTurnOnLight {
+public class testLights {
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
-    public void testTurnOnLight() {
+    public void testLights() {
+
         ViewInteraction bottomNavigationItemView = onView(
                 allOf(withId(R.id.nav_light), withContentDescription("light"),
                         childAtPosition(
@@ -43,15 +44,23 @@ public class TestTurnOnLight {
                         isDisplayed()));
         bottomNavigationItemView.perform(click());
 
-
         ViewInteraction materialCheckBox = onView(
-                allOf(childAtPosition(
+                allOf(isDisplayed(), childAtPosition(
                         childAtPosition(
                                 withId(R.id.recyclerViewLight),
                                 0),
                         1),
                         isDisplayed()));
         materialCheckBox.perform(click());
+
+        ViewInteraction materialCheckBox2 = onView(
+                allOf(isDisplayed(), childAtPosition(
+                        childAtPosition(
+                                withId(R.id.recyclerViewLight),
+                                0),
+                        1),
+                        isDisplayed()));
+        materialCheckBox2.perform(click());
     }
 
     private static Matcher<View> childAtPosition(
