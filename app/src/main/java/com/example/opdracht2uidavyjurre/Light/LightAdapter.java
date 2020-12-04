@@ -26,7 +26,6 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
 
     public LightAdapter(ArrayList<LightResponse> hueEmulator) {
         lights = hueEmulator;
-
     }
 
     @NonNull
@@ -38,14 +37,13 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
 
     @Override
     public void onBindViewHolder(@NonNull InformationViewHolder holder, int position) {
-
+        holder.checkBox.setId(position);
         holder.textView1.setText(lights.get(position).getName());
         holder.checkBox.setVisibility(View.VISIBLE);
         holder.textView2.setText(lights.get(position).getModelid());
 
 
         holder.checkBox.setChecked(lights.get(position).getState().isOn());
-
 
         holder.checkBox.setOnClickListener(v -> {
             if (holder.checkBox.isChecked()) {
@@ -61,8 +59,6 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
 
             AppCompatActivity appCompatActivity = (AppCompatActivity) v.getContext();
             LightInfoFragment informationInfoFragment = new LightInfoFragment(lights, position);
-
-            System.out.println("position " + position);
 
             appCompatActivity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment, informationInfoFragment).commit();
 

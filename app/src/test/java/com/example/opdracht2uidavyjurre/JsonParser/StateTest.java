@@ -56,14 +56,20 @@ public class StateTest {
 
     @Test
     public void getXy() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.getXy(), mockie.getXy());
     }
 
     @Test
     public void getCt() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.getCt(), mockie.getCt());
     }
 
     @Test
     public void getAlert() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.getAlert(), mockie.getAlert());
     }
 
     @Test
@@ -74,25 +80,37 @@ public class StateTest {
 
     @Test
     public void getEffect() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.getEffect(), mockie.getEffect());
     }
 
     @Test
     public void getBri() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.getBri(), mockie.getBri());
     }
 
     @Test
     public void getHue() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.getHue(), mockie.getHue());
     }
 
     @Test
     public void getColormode() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.getColormode(), mockie.getColormode());
     }
 
     @Test
     public void isReachable() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.isReachable(), mockie.isReachable());
     }
 
     @Test
     public void isOn() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.isOn(), mockie.isOn());
     }
 }
