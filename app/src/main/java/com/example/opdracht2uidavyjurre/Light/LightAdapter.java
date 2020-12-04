@@ -57,8 +57,6 @@ public class LightAdapter extends RecyclerView.Adapter<LightAdapter.InformationV
             AppCompatActivity appCompatActivity = (AppCompatActivity) v.getContext();
             LightInfoFragment informationInfoFragment = new LightInfoFragment(lights, position);
 
-            System.out.println("position " + position);
-
             appCompatActivity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment, informationInfoFragment).commit();
 
         });
