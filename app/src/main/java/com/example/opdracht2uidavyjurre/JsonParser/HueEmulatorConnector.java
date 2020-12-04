@@ -14,10 +14,6 @@ import java.util.Collections;
 
 public class HueEmulatorConnector {
 
-    private final String bridgeIp = "192.168.178.24"; // Fill in the IP address of your Bridge
-    private final String postManUrl = "http://localhost:8000/api/newdeveloper/lights";
-    private final String androidUrl = "http://10.0.2.2:8000/api/newdeveloper/lights";
-    private final String bridgeUrl = "http://10.0.2.2:8000/api/1028d66426293e821ecfd9ef1a0731df/lights";
 
     public static ArrayList<LightResponse> retrieveLights() {
         final String androidUrlLight = "http://10.0.2.2:8000/api/newdeveloper/lights/";

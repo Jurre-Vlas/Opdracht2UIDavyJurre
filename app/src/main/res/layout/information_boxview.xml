@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/informationLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="4dp"
-    android:id="@+id/informationLayout"
-    >
+    android:background="#A33030"
+    app:cardBackgroundColor="#A33030"
+    app:cardCornerRadius="4dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,34 +14,34 @@
         android:layout_margin="4dp">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:padding="2dp"
-            android:id="@+id/imageView"
-            app:srcCompat="@drawable/phillipslamp"/>
+            app:srcCompat="@drawable/phillipslamp" />
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title"
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@id/imageView"
-            android:layout_toRightOf="@id/imageView" />
-        
+            android:layout_toRightOf="@id/imageView"
+            android:text="Title"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description"
-            android:textSize="15sp"
             android:layout_below="@id/textView1"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_toEndOf="@id/imageView"
             android:layout_toRightOf="@id/imageView"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp" />
+            android:text="Description"
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/checkBoxOn"
@@ -49,10 +50,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
 
     </RelativeLayout>
-
 
 
 </androidx.cardview.widget.CardView>

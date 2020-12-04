@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-
-
+    android:background="#A33030">
 
 
     <ImageView
@@ -18,8 +16,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/phillipslamp"
-         />
+        app:srcCompat="@drawable/phillipslamp" />
 
     <TextView
         android:id="@+id/titleLight"
@@ -33,33 +30,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LightImageView" />
 
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/SeekbarBri"-->
-<!--        android:id="@+id/ButtonSetCollor"-->
-<!--        android:text="set Collor"-->
-<!--        />-->
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/SeekbarBri"-->
+    <!--        android:id="@+id/ButtonSetCollor"-->
+    <!--        android:text="set Collor"-->
+    <!--        />-->
 
     <androidx.appcompat.widget.AppCompatSeekBar
-       android:id="@+id/SeekbarColor"
+        android:id="@+id/SeekbarColor"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleLight"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/titleLight" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleLight"
         android:text="Colour"
         app:layout_constraintEnd_toStartOf="@id/SeekbarColor"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLight" />
 
     <androidx.appcompat.widget.AppCompatSeekBar
         android:id="@+id/SeekbarSat"
@@ -67,17 +62,15 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SeekbarColor"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/SeekbarColor" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SeekbarColor"
         android:text="Saturation"
         app:layout_constraintEnd_toStartOf="@id/SeekbarSat"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SeekbarColor" />
 
     <androidx.appcompat.widget.AppCompatSeekBar
         android:id="@+id/SeekbarBri"
@@ -85,18 +78,15 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SeekbarSat"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/SeekbarSat" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SeekbarSat"
         android:text="Brightnes"
         app:layout_constraintEnd_toStartOf="@id/SeekbarBri"
-        />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SeekbarSat" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

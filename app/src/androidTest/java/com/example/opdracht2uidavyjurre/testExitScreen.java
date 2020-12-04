@@ -45,7 +45,7 @@ public class testExitScreen {
         bottomNavigationItemView.perform(click());
 
         ViewInteraction materialButton = onView(
-                allOf(withId(R.id.exitButton), withText("Vaarwel"),
+                allOf(withId(R.id.exitButton), withText("goodbye"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(R.id.fragment),
