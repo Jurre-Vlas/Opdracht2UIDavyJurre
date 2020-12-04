@@ -31,31 +31,25 @@ public class ExitFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_fragment_exit, container, false);
 
-         lights = HueEmulatorConnector.retrieveLights();
 
-         try {
-             Thread.sleep(500);
-         } catch (InterruptedException e) {
-             e.printStackTrace();
-         }
 
         Button exitButton = (Button) view.findViewById(R.id.exitButton);
 
-         exitButton.setOnClickListener(v -> {
+        exitButton.setOnClickListener(v -> {
 
-             for (int i = 0; i < lights.size() ; i++) {
-                 HueEmulatorConnector.turnOffLight(i+ 1);
+            for (int i = 0; i < lights.size() ; i++) {
+                HueEmulatorConnector.turnOffLight(i+ 1);
 
-             }
-             try {
-                 Thread.sleep(100);
-                 System.exit(0);
-             } catch (InterruptedException e) {
-                 e.printStackTrace();
-             }
+            }
+            try {
+                Thread.sleep(100);
+                System.exit(0);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         });
 
-         return view;
+        return view;
     }
 }
