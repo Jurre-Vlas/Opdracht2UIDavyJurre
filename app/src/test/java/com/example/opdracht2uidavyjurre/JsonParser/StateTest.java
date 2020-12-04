@@ -54,11 +54,6 @@ public class StateTest {
         });
     }
 
-    @Test
-    public void getXy() {
-        State mockie = Mockito.mock(State.class);
-        assertEquals(stateMock.getXy(), mockie.getXy());
-    }
 
     @Test
     public void getCt() {
@@ -112,5 +107,19 @@ public class StateTest {
     public void isOn() {
         State mockie = Mockito.mock(State.class);
         assertEquals(stateMock.isOn(), mockie.isOn());
+    }
+
+
+    //// Bad tests
+    @Test
+    public void isReachableWrong() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.getEffect(), mockie.isReachable());
+    }
+
+    @Test
+    public void isOnWrong() {
+        State mockie = Mockito.mock(State.class);
+        assertEquals(stateMock.getEffect(), mockie.isOn());
     }
 }
