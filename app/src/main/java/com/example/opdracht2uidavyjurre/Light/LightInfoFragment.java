@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.SeekBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +18,7 @@ import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
 import com.example.opdracht2uidavyjurre.MainActivity;
 import com.example.opdracht2uidavyjurre.R;
 
+import java.nio.channels.SelectionKey;
 import java.util.ArrayList;
 
 import yuku.ambilwarna.AmbilWarnaDialog;
@@ -25,58 +27,47 @@ public class LightInfoFragment extends Fragment {
 
     ArrayList<LightResponse> hueEmulator;
     int position;
-    Button setCollorButton;
+     SeekBar seekbarcolor;
+     SeekBar seekbarbrightness;
+     SeekBar seekbarSat;
 
     public LightInfoFragment(ArrayList<LightResponse> lights, int position) {
         this.hueEmulator = lights;
         this.position = position;
+
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment__setinformation_light, container, false);
 
-        setCollorButton = (Button) view.findViewById(R.id.ButtonSetCollor);
+        seekbarcolor = (SeekBar) view.findViewById(R.id.SeekbarColor);
+        seekbarbrightness = (SeekBar) view.findViewById(R.id.SeekbarBri) ;
+        seekbarSat = (SeekBar)view.findViewById(R.id.SeekbarSat);
 
-        setCollorButton.setOnClickListener(v -> {
+        seekbarcolor.setMax(1559);
 
-            openColorPicker();
-
-        });
-
-
-
-        setData();
-
-        return view;
-    }
-
-    private void openColorPicker() {
-        System.out.println("hij komt hier in");
-        AmbilWarnaDialog colorPicker = new AmbilWarnaDialog(getActivity(), 0, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+        seekbarcolor.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onCancel(AmbilWarnaDialog dialog) {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                HueEmulatorConnector.setColorLight(position, progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
 
             }
 
             @Override
-            public void onOk(AmbilWarnaDialog dialog, int color) {
-                System.out.println(color);
-                HueEmulatorConnector.setColorLight(position, color );
+            public void onStopTrackingTouch(SeekBar seekBar) {
 
             }
         });
 
         colorPicker.show();
-
-
-
     }
 
-    private void getData() {
+        return view;
     }
 
 
-    public void setData() {
-
-    }
 }

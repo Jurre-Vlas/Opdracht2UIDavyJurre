@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.opdracht2uidavyjurre.Colour.ColourFragment;
 import com.example.opdracht2uidavyjurre.Information.InformationFragment;
 
 import com.example.opdracht2uidavyjurre.JsonParser.HueEmulatorConnector;
