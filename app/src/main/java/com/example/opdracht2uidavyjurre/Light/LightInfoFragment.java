@@ -63,9 +63,6 @@ public class LightInfoFragment extends Fragment {
             }
         });
 
-        colorPicker.show();
-    }
-
         return view;
     }
 
