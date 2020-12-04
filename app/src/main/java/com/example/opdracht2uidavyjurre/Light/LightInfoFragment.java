@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.opdracht2uidavyjurre.JsonParser.HueEmulatorConnector;
 import com.example.opdracht2uidavyjurre.JsonParser.LightResponse;
+import com.example.opdracht2uidavyjurre.MainActivity;
 import com.example.opdracht2uidavyjurre.R;
 
 import java.util.ArrayList;
@@ -61,10 +62,14 @@ public class LightInfoFragment extends Fragment {
             public void onOk(AmbilWarnaDialog dialog, int color) {
                 System.out.println(color);
                 HueEmulatorConnector.setColorLight(position, color );
+
             }
         });
 
         colorPicker.show();
+
+
+
     }
 
     private void getData() {

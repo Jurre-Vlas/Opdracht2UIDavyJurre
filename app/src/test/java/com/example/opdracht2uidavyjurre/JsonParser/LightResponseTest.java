@@ -41,8 +41,4 @@ public class LightResponseTest {
         assertEquals(testLight.getUniqueid(), expectedOutput);
     }
 
-    @Test
-    public void compareTo() {
-
-    }
 }

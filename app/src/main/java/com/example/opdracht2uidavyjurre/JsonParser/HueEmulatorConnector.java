@@ -123,6 +123,8 @@ public class HueEmulatorConnector {
         });
     }
 
+
+    //0 and 65535
     public static void setColorLight(int lightNumber, int Colour) {
         //https://developers.meethue.com/develop/hue-api/lights-api/
         final String androidUrlLight = "http://10.0.2.2:8000/api/newdeveloper/lights/";
@@ -154,6 +156,73 @@ public class HueEmulatorConnector {
             }
         });
     }
+
+
+    //sat	uint8	Saturation of the light. 254 is the most saturated (colored) and 0 is the least saturated (white)
+    public static void setSaturation(int lightNumber, int Colour) {
+        //https://developers.meethue.com/develop/hue-api/lights-api/
+        final String androidUrlLight = "http://10.0.2.2:8000/api/newdeveloper/lights/";
+
+        String jsonBody = "{\"sat\":" + Colour + "}\n";
+
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        RequestBody body = RequestBody.create(JSON, jsonBody);
+
+        int newNumber = lightNumber + 1;
+
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(androidUrlLight + newNumber  + "/state/")
+                .put(body)
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onResponse(Response response) throws IOException {
+                System.out.println(response.body().string());
+                System.out.println("Succes! Light turned other colour");
+            }
+
+            @Override
+            public void onFailure(Request request, IOException e) {
+                System.out.println(e.getLocalizedMessage());
+                System.out.println("Fail!");
+
+            }
+        });
+    }
+
+//    bri	uint8	Brightness of the light. This is a scale from the minimum brightness the light is capable of, 1, to the maximum capable brightness, 254.
+public static void setBrightness(int lightNumber, int Colour) {
+    //https://developers.meethue.com/develop/hue-api/lights-api/
+    final String androidUrlLight = "http://10.0.2.2:8000/api/newdeveloper/lights/";
+
+    String jsonBody = "{\"bri\":" + Colour + "}\n";
+
+    MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    RequestBody body = RequestBody.create(JSON, jsonBody);
+
+    int newNumber = lightNumber + 1;
+
+    OkHttpClient client = new OkHttpClient();
+    Request request = new Request.Builder()
+            .url(androidUrlLight + newNumber  + "/state/")
+            .put(body)
+            .build();
+    client.newCall(request).enqueue(new Callback() {
+        @Override
+        public void onResponse(Response response) throws IOException {
+            System.out.println(response.body().string());
+            System.out.println("Succes! Light turned other colour");
+        }
+
+        @Override
+        public void onFailure(Request request, IOException e) {
+            System.out.println(e.getLocalizedMessage());
+            System.out.println("Fail!");
+
+        }
+    });
+}
 
 
 }
