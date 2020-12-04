@@ -42,6 +42,7 @@ public class InformationFragment extends Fragment {
 
       RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 
+      InformationAdapter informationAdapter = new InformationAdapter(hueEmulator);
         recyclerView.setAdapter(informationAdapter);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());

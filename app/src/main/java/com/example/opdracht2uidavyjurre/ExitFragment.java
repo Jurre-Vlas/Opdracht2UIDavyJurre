@@ -31,13 +31,7 @@ public class ExitFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_fragment_exit, container, false);
 
-         lights = HueEmulatorConnector.retrieveLights();
 
-         try {
-             Thread.sleep(500);
-         } catch (InterruptedException e) {
-             e.printStackTrace();
-         }
 
         Button exitButton = (Button) view.findViewById(R.id.exitButton);
 
